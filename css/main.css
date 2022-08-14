@@ -15,7 +15,7 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-section {
+.desktop {
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -25,7 +25,7 @@ section {
     overflow: hidden;
 }
 
-section header {
+.desktop__header {
     position: absolute;
     top: 0;
     left: 0;
@@ -37,7 +37,7 @@ section header {
     align-items: center;
 }
 
-header .logo {
+.desktop__logo {
     position: relative;
     font-size: 2rem;
     color: #fff;
@@ -48,7 +48,7 @@ header .logo {
     transition: 0.5s;
 }
 
-header .toggle {
+.desktop__toggle {
     position: relative;
     width: 40px;
     height: 40px;
@@ -62,7 +62,7 @@ header .toggle {
     align-items: center;
 }
 
-header .toggle::before {
+.desktop__toggle::before {
     content: "Menu";
     position: absolute;
     right: 45px;
@@ -75,7 +75,7 @@ header .toggle::before {
     color: #111;
 }
 
-header .toggle.active {
+.desktop__toggle.active {
     background-image: url(../img/close.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -83,11 +83,11 @@ header .toggle.active {
     background-size: 30px;
 }
 
-header .toggle.active::before {
+.desktop__toggle.active::before {
     content: "Close";
 }
 
-.glass {
+.desktop__glass {
     position: absolute;
     top: 0;
     left: 0;
@@ -99,7 +99,11 @@ header .toggle.active::before {
     transition: 0.5s;
 }
 
-section video {
+.desktop.active .desktop__glass {
+    width: 100%;
+}
+
+.desktop__video {
     position: absolute;
     top: 0;
     left: 0;
@@ -108,11 +112,7 @@ section video {
     object-fit: cover;
 }
 
-section.active .glass {
-    width: 100%;
-}
-
-.content {
+.desktop__content {
     position: relative;
     z-index: 10;
     text-align: center;
@@ -120,15 +120,15 @@ section.active .glass {
     transition-delay: 0.5s;
 }
 
-.content h2 {
+.desktop__content {
     position: relative;
     color: #fff;
-    font-size: 10vw;
+    font-size: 8vw;
     line-height: 5rem;
     text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.content h2 span {
+.desktop__content h2 span {
     font-size: 2rem;
     font-weight: 300;
     letter-spacing: 5px;
@@ -138,14 +138,14 @@ section.active .glass {
     text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-section.active .content {
+.desktop.active .desktop__content {
     opacity: 0;
     visibility: hidden;
     transform: translateX(-200px);
 }
 
 /* social media */
-section .social {
+.desktop__social {
     position: absolute;
     right: 100px;
     bottom: 40px;
@@ -153,7 +153,7 @@ section .social {
     z-index: 100;
 }
 
-section .social li {
+.desktop__social li {
     list-style: none;
     margin: 5px;
     padding: 0 6px;
@@ -161,7 +161,7 @@ section .social li {
     transition: 0.5s;
 }
 
-section .social li a {
+.desktop__social li a {
     color: #111;
     text-decoration: none;
     display: inline-block;
@@ -171,14 +171,14 @@ section .social li a {
     text-transform: uppercase;
 }
 
-section.active .social li {
+.desktop.active .desktop__social li {
     opacity: 0;
     visibility: hidden;
     transform: translateY(100px);
     transition-delay: calc(0.2s * var(--i));
 }
 
-section .navigation {
+.desktop__navigation {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -186,7 +186,7 @@ section .navigation {
     z-index: 100;
 }
 
-section .navigation li {
+.desktop__navigation li {
     list-style: none;
     text-align: center;
     margin: 15px 0;
@@ -196,14 +196,14 @@ section .navigation li {
     transform: translateX(200px);
 }
 
-section.active .navigation li {
+.desktop.active .desktop__navigation li {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
-    transition-delay: 0.5s;
+    transition-delay: 1s;
 }
 
-section .navigation li a {
+.desktop__navigation li a {
     color: #111;
     font-size: 1.5rem;
     letter-spacing: 4px;
@@ -217,7 +217,7 @@ section .navigation li a {
     padding: 4px 10px;
 }
 
-section .navigation li a:hover {
+.desktop__navigation li a:hover {
     color: #fff;
     background-color: #111;
     letter-spacing: 10px;
