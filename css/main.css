@@ -223,3 +223,9 @@ body {
     letter-spacing: 10px;
     text-transform: lowercase;
 }
+
+@media (max-width: 768px) {
+    .desktop__header {
+        padding: 1rem;
+    }
+}
